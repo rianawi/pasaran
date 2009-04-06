@@ -9,6 +9,7 @@ class Pasaran
 
   def to_s
     weekday = WEEKDAYS[date.wday]
-    date == Date.new(2009, 4, 6) ? "#{weekday} Wage" : "#{weekday} Kliwon"
+    pasaran = date == Date.new(2009, 4, 6) ? "Wage" : "Kliwon"
+    "#{weekday} #{pasaran}"
   end
 end
