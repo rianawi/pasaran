@@ -1,4 +1,6 @@
 class Pasaran
+  WEEKDAYS = %w(Minggu Senin Selasa Rabu Kamis Jumat Sabtu)
+
   attr_accessor :date
 
   def initialize(date)
@@ -6,6 +8,7 @@ class Pasaran
   end
 
   def to_s
-    date == Date.new(2009, 4, 6) ? "Senin Wage" : "Selasa Kliwon"
+    weekday = WEEKDAYS[date.wday]
+    date == Date.new(2009, 4, 6) ? "#{weekday} Wage" : "#{weekday} Kliwon"
   end
 end
