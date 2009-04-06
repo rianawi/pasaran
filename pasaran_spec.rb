@@ -1,12 +1,13 @@
 require 'pasaran'
 
-describe Pasaran, "on April 6, 2009" do
-  before(:each) do
-    date = Date.new(2009, 4, 6)
-    @pasaran = Pasaran.new(date)
+describe Pasaran do
+  it "should give 'Senin Wage' on April 6, 2009" do
+    @pasaran = Pasaran.new(Date.new(2009, 4, 6))
+    @pasaran.to_s.should == "Senin Wage"
   end
 
-  it "should give 'Senin Wage'" do
-    @pasaran.to_s.should == "Senin Wage"
+  it "should give 'Selasa Kliwon' on April 7, 2009" do
+    @pasaran = Pasaran.new(Date.new(2009, 4, 7))
+    @pasaran.to_s.should == "Selasa Kliwon"
   end
 end
