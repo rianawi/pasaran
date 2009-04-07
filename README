@@ -6,8 +6,20 @@ Pasaran is 5 'custom' days in Javanese calendar system just like 7 week days in 
 
 Requirement
 -----------
-$ gem install rspec
+$ sudo gem install rspec
 
-Running test
+Installation
 ------------
+$ git clone git://github.com/rianawi/pasaran.git
+$ cd pasaran
 $ spec pasaran_spec.rb
+
+Examples
+--------
+$ irb
+require 'pasaran'
+=> true
+DateTime.now.to_pasaran
+=> "Selasa Kliwon"
+DateTime.new(1979,1,8).to_pasaran
+=> "Senin Pon"
