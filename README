@@ -1,0 +1,13 @@
+Pasaran Extension for DateTime Class
+====================================
+by Wiriana Awiputra <rianawi at gmail dot com>
+
+Pasaran is 5 'custom' days in Javanese calendar system just like 7 week days in solar calendar system. They are Pon, Wage, Kliwon, Legi, and Pahing. It was a mark for market (pasar) activity in Javanese culture. That's why people call them Pasaran.
+
+Requirement
+-----------
+$ gem install rspec
+
+Running test
+------------
+$ spec pasaran_spec.rb

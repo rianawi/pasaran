@@ -1,16 +1,19 @@
-class Pasaran
-  WEEKDAYS = %w(Minggu Senin Selasa Rabu Kamis Jumat Sabtu)
-  PASARANS = %w(Pon Wage Kliwon Legi Pahing)
+require 'date'
 
-  attr_accessor :date
+class DateTime
+  PASARAN_WEEKDAYS = %w(Minggu Senin Selasa Rabu Kamis Jumat Sabtu)
+  PASARAN_DAYS = %w(Pon Wage Kliwon Legi Pahing)
 
-  def initialize(date)
-    @date = date
+  def pday
+    ref_date = Date.new(2009, 4, 5) # pday=0, pwday=0
+    wday = (self - ref_date).to_i % 5
   end
 
-  def to_s
-    weekday = WEEKDAYS[date.wday]
-    pasaran = PASARANS[date.wday]
-    "#{weekday} #{pasaran}"
+  def pwday
+    wday
+  end
+
+  def to_pasaran
+    "#{PASARAN_WEEKDAYS[pwday]} #{PASARAN_DAYS[pday]}"
   end
 end
